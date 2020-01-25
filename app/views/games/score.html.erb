@@ -1,0 +1,10 @@
+<h1>Result</h1>
+<p><% if !@can_be_built %>
+      Sorry but <strong><%= @try.upcase %></strong> can't be built out of <%= @available_letters.join(" ") %>
+    <% elsif !@exists %>
+      Sorry but <strong><%= @try.upcase %></strong> does not seem to be a valid English word...
+    <% else %>
+      <strong>Congratulations!</strong> <%= @try.upcase %> is a valid English word! You won in <%= @time_diff %> seconds. <br> You score <%= @score %> points. <br> Your total score is <%= @total_score %>!
+    <% end %>
+</p>
+ <button type="button" class="btn btn-light"><a href="/new">Try Again </a> </button>
